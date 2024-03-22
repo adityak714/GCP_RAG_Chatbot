@@ -4,7 +4,7 @@ const axios = require("axios");
 const { MongoClient } = require("mongodb");
 const config = require("./config.json");
 
-const directoryPath = "./pdfs"; // Directory where your PDF files are stored
+const directoryPath = "./my_pdfs"; // Directory where your PDF files are stored
 const embeddingEndpoint = `http://localhost:${config.port}/embedding`;
 
 // MongoDB client

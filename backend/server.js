@@ -152,7 +152,8 @@ app.post("/chat", async (req, res) => {
       // Check if aggregation returned results and prepare prompt accordingly.
       if (aggregationResponse.length > 0) {
         const { pdfFileName, sentence, pageNumber } = aggregationResponse[0];
-        mongoContext = `Answer the user based on the Relevant context, always tell the user the name of the pdf file and the page number as part of your answer: "${sentence}" from ${pdfFileName}, page ${pageNumber}.`;
+        mongoContext = `Answer the user based on the Relevant context, always tell the user the name of the pdf file and the page number as part of your answer: "${sentence}" from ${pdfFileName}, page ${pageNumber}.
+                        You should tell clearly which IKEA appliance is used, and warn that different models have different configurations every time.`;
 
         prompt = {
           context: mongoContext,
